@@ -25,22 +25,28 @@ switch(action.type){
         
         return {...state, 
         tomato: [...state.tomato, {img: tomatos}], 
+        money: state.money + 10
         
     }
     }   
     case 'ADD_MEAT':{ 
         return {...state, 
-        meat: [...state.meat, {img: meats}]}
+        meat: [...state.meat, {img: meats}], 
+        money: state.money + 15
+    }
     }   
     case 'ADD_SALAT':{ 
         return {...state, 
-        salat: [...state.salat, {img: salats}]}
+        salat: [...state.salat, {img: salats}], 
+        money: state.money + 5
+    }
     } 
     case 'DELL_SALAT':{  
     
         if(state.salat.length !==0){ 
             let dell = {...state, salat: [...state.salat]} 
-            dell.salat.pop() 
+            dell.salat.pop()  
+            
             return dell 
         } 
         return state.errorMessage = 'You dont have any Salat'
