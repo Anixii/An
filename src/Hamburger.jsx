@@ -24,7 +24,8 @@ export default function Hamburger (props){
 {/* 
 <h1> Сумма заказа: {money}</h1>  */}
         <div className='burger'> 
-        <h1>Price: ${props.money}</h1>  
+        <h1>Price: ${props.money}</h1>   
+        <h2>{props.errorMessage}</h2>
         <div className='top'>   
          <img src={top}></img>
          </div>

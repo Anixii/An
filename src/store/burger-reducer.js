@@ -25,48 +25,57 @@ switch(action.type){
         
         return {...state, 
         tomato: [...state.tomato, {img: tomatos}], 
-        money: state.money + 10
+        money: state.money + 10, 
+        errorMessage: ''
         
     }
     }   
     case 'ADD_MEAT':{ 
         return {...state, 
         meat: [...state.meat, {img: meats}], 
-        money: state.money + 15
+        money: state.money + 15, 
+        errorMessage: ''
     }
     }   
     case 'ADD_SALAT':{ 
         return {...state, 
         salat: [...state.salat, {img: salats}], 
-        money: state.money + 5
+        money: state.money + 5, 
+        errorMessage: ''
     }
     } 
     case 'DELL_SALAT':{  
     
         if(state.salat.length !==0){ 
-            let dell = {...state, salat: [...state.salat]} 
-            dell.salat.pop()  
-            
-            return dell 
+            return { 
+                ...state, 
+                ...state.salat.pop(), 
+                money: state.money - 5
+            }
         } 
-        return state.errorMessage = 'You dont have any Salat'
+        return {...state, errorMessage:  'You dont have any Salat'}
     } 
     case 'DELL_TOMATO': { 
         if(state.tomato.length !==0){ 
-            let dell = {...state, tomato: [...state.tomato]} 
-            dell.tomato.pop() 
-            return dell
+            return { 
+                ...state, 
+                ...state.tomato.pop(), 
+                money: state.money - 10
+            }
         } 
-        return state.errorMessage = 'You dont have any TOmato'
+       
+        return {...state,  errorMessage: 'You dont have any TOmato' }
     }
     case 'DELL_MEAT':{ 
         if(state.meat.length !==0){ 
-            let dell = {...state, meat: [...state.meat]} 
-            dell.meat.pop() 
-            return dell 
+            return { 
+                ...state, 
+                ...state.meat.pop(), 
+                money: state.money - 15
+            }
 
         } 
-        return state.errorMessage = 'You dont have any Meat'
+        return {...state,  errorMessage: 'You dont have any Meat'}
     } 
     
     default : { 
