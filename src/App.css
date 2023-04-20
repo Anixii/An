@@ -43,3 +43,26 @@
     transform: rotate(360deg);
   }
 }
+li{ 
+  text-decoration: none; 
+  font-size: 48px; 
+  font-weight: 900; 
+  list-style: none;
+} 
+ul{ 
+  text-decoration: none;
+} 
+form{ 
+  display: flex; 
+  flex-direction: column;  
+  height: 150px;
+  justify-content: space-around; 
+  align-items:center;
+
+} 
+input{ 
+  padding: 15px 40px; 
+  font-size: 24px; 
+  border-radius: 5px; 
+  width: 250px;
+}

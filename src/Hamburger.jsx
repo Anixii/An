@@ -1,5 +1,6 @@
 import top from './assets/top.jpg' 
 import bottom from './assets/bottom.jpg'  
+import { NavLink } from 'react-router-dom'
 export default function Hamburger (props){ 
     const addTomato = () => { 
         props.addTomatoAC()
@@ -18,6 +19,9 @@ export default function Hamburger (props){
     } 
     const dellTomato = () => { 
       props.deleteTomatoAC()
+    } 
+    const redirect = () =>{ 
+      
     }
     return( 
         <div> 
@@ -51,7 +55,8 @@ export default function Hamburger (props){
           <button onClick={delSalat}>Удалить Салат</button> 
           <button onClick={delMEat}>Удалить Мясо</button> 
           <button onClick={dellTomato}>Удалить кетчуп</button>
-        </div>
+        </div> 
+        <button onClick={redirect}> <NavLink to={'/success'}>Далее</NavLink></button>
         </div>
     )
 }

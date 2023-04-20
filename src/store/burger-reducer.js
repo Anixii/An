@@ -3,7 +3,7 @@ import meats from '../assets/meat.jpg'
 import salats from '../assets/salat.jpg' 
 import tomatos from '../assets/tomato.jpg' 
  const defaultState ={ 
-  
+
         salat:[{ 
             img: salats
         }],  
@@ -13,8 +13,11 @@ import tomatos from '../assets/tomato.jpg'
         tomato: [ { 
             img: tomatos
         }], 
-        errorMessage: '',  
-        money: 30
+        money: 30, 
+        isSuccess: false,  
+        address: '', 
+        number: ''
+
         
     
 } 
@@ -76,8 +79,26 @@ switch(action.type){
 
         } 
         return {...state,  errorMessage: 'You dont have any Meat'}
+    }  
+    case 'TOGGLE' :{ 
+        return{ 
+            ...state, 
+            isSuccess: true
+        }
     } 
+    case 'UPDATE_ADDRESS' :{ 
+        return{ 
+            ...state, 
+            address: action.data
+        } 
     
+     }
+     case 'UPDATE_NUMBER' :{ 
+        return{ 
+            ...state, 
+            number: action.data
+        } 
+    }
     default : { 
         return state
     }
@@ -101,5 +122,14 @@ export const addSalat = () => {
     return{ 
         type: 'ADD_SALAT'
     }
+}  
+export const toggleSuccess =() =>{ 
+    return{type: 'TOGGLE'}
 } 
+export const updateAddress = (data) => { 
+    return {type: 'UPDATE_ADDRESS', data}
+} 
+export const updateNumber = (data) => { 
+    return {type: 'UPDATE_NUMBER', data}
+}
 export default burgerReducer
