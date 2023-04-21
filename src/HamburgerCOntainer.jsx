@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import { addTomatoAC,  addSalat, addMeatAC, deleteMeatAC, deleteTomatoAC, deleteSalatAC } from "./store/burger-reducer";
 import React from "react";
 import Hamburger from "./Hamburger";
- 
 class HamburgerCOntainer extends React.Component{ 
     render(){ 
         return( 

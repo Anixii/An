@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom"
-
 const Price = (props) => { 
     const toggle = () => { 
         props.toggleSuccess()

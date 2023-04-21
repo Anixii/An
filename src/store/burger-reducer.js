@@ -48,7 +48,6 @@ switch(action.type){
     }
     } 
     case 'DELL_SALAT':{  
-    
         if(state.salat.length !==0){ 
             return { 
                 ...state, 
@@ -76,7 +75,6 @@ switch(action.type){
                 ...state.meat.pop(), 
                 money: state.money - 15
             }
-
         } 
         return {...state,  errorMessage: 'You dont have any Meat'}
     }  
@@ -91,7 +89,6 @@ switch(action.type){
             ...state, 
             address: action.data
         } 
-    
      }
      case 'UPDATE_NUMBER' :{ 
         return{ 

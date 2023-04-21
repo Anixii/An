@@ -7,7 +7,6 @@
         return (<Price {...this.props}/>)
     }
 }
-
 const mapStateToProps = (state) => { 
     return{ 
        salat: state.burger.salat, 

@@ -6,7 +6,6 @@ import { connect } from "react-redux"
         return (<Order {...this.props}/>)
     }
 }
-
 const mapStateToProps = (state) => { 
     return{ 
         address: state.burger.address, 
