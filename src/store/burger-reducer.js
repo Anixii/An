@@ -1,4 +1,4 @@
-import { type } from '@testing-library/user-event/dist/type'
+
 import meats from '../assets/meat.jpg' 
 import salats from '../assets/salat.jpg' 
 import tomatos from '../assets/tomato.jpg' 

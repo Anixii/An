@@ -31,19 +31,19 @@ export default function Hamburger (props){
         <h1>Price: ${props.money}</h1>   
         <h2>{props.errorMessage}</h2>
         <div className='top'>   
-         <img src={top}></img>
+         <img src={top} alt='top'></img>
          </div>
         <div className='salat'> 
-        {props.salat.map((i) => (<img className='salat' src={i.img} /> ))}
+        {props.salat.map((i) => (<img className='salat' alt='salat' src={i.img} /> ))}
         </div> 
         <div className='meat'> 
-        {props.meat.map((item) => (<img src={item.img} /> ))}
+        {props.meat.map((item) => (<img alt='meat' src={item.img} /> ))}
         </div> 
         <div className='tomato'> 
-        {props.tomato.map((item) => (<img src={item.img}/>  ))}
+        {props.tomato.map((item) => (<img alt='tomato' src={item.img}/>  ))}
         </div> 
-        <div> 
-          <img src={bottom}></img>
+        <div>  
+          <img src={bottom} alt='bottom '/>
         </div>
         </div> 
         <div className='btn'> 

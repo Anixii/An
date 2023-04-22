@@ -3,10 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import HamburgerCOntainer from './HamburgerCOntainer';
 import PriceContainer from './PriceContainer'
-
 import OrederContainer from './OrederContainer';
-function App() {  
-  
+function App() {   
   return (
     <div className="App">  
     <Routes> 
