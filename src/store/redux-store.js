@@ -3,5 +3,6 @@ import burgerReducer from "./burger-reducer";
 let reducers = combineReducers({ 
     burger: burgerReducer,
 }) 
-let store = createStore(reducers) 
+let store = createStore(reducers)  
+
 export default store
