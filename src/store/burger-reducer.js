@@ -17,9 +17,6 @@ import tomatos from '../assets/tomato.jpg'
         isSuccess: false,  
         address: '', 
         number: ''
-
-        
-    
 } 
  let burgerReducer = (state = defaultState, action) =>{ 
 
@@ -105,16 +102,8 @@ switch(action.type){
 export const deleteTomatoAC = ()=>{ return{type: 'DELL_TOMATO'}} 
 export const deleteMeatAC = ()=>{ return{type: 'DELL_MEAT'}} 
 export const deleteSalatAC = ()=>{ return{type: 'DELL_SALAT'}}
-export const addTomatoAC=()=>{ 
-    return{ 
-        type: 'ADD_TOMATO'
-    }
-} 
-export const addMeatAC =()=> { 
-    return{ 
-        type: 'ADD_MEAT'
-    }
-}  
+export const addTomatoAC=()=>{  return{type: 'ADD_TOMATO'}} 
+export const addMeatAC =()=> {  return{type: 'ADD_MEAT'}}  
 export const addSalat = () => { 
     return{ 
         type: 'ADD_SALAT'
@@ -128,5 +117,6 @@ export const updateAddress = (data) => {
 } 
 export const updateNumber = (data) => { 
     return {type: 'UPDATE_NUMBER', data}
-}
+} 
+
 export default burgerReducer
