@@ -16,7 +16,8 @@ import tomatos from '../assets/tomato.jpg'
         money: 30, 
         isSuccess: false,  
         address: '', 
-        number: ''
+        number: '', 
+        isFetch: false
 } 
  let burgerReducer = (state = defaultState, action) =>{ 
 
@@ -118,5 +119,5 @@ export const updateAddress = (data) => {
 export const updateNumber = (data) => { 
     return {type: 'UPDATE_NUMBER', data}
 } 
-
+export const toggleFetching = (data) => ({type: 'TOGGLE_FETCH', data})
 export default burgerReducer
