@@ -1,33 +1,34 @@
 import top from './assets/top.jpg' 
 import bottom from './assets/bottom.jpg'  
-import { NavLink } from 'react-router-dom'
-export default function Hamburger (props){ 
-    const addTomato = () => { 
-        props.addTomatoAC()
+import { NavLink } from 'react-router-dom' 
+import { useSelector,useDispatch,useStore } from 'react-redux'
+import { addTomato, addSalat, addMeat, deleteMeat, deleteSalat, deleteTomato } from './store/burger-reducer';
+export default function Hamburger (){ 
+    console.log(useStore().getState());  
+    const props = useSelector(state => state.burger)  
+    const dispatch = useDispatch()
+    const addTomatoHandler = () => { 
+        dispatch(addTomato()) 
     } 
-    const addSalat = () =>{ 
-        props.addSalat()
+    const addSalatHandler = () =>{ 
+        dispatch(addSalat())
     } 
-    const addMeatAC =()=> { 
-        props.addMeatAC()
+    const addMeatHandler =()=> { 
+        dispatch(addMeat())
     } 
     const delMEat =()=>{ 
-      props.deleteMeatAC()
+      dispatch(deleteMeat())
     } 
-    const delSalat = () => {  
-      props.deleteSalatAC()
+    const delSalatHandler = () => {  
+      dispatch(deleteSalat())
     } 
-    const dellTomato = () => { 
-      props.deleteTomatoAC()
+    const dellTomatoHandler = () => { 
+      dispatch(deleteTomato())
     } 
-    const redirect = () =>{ 
-      
-    }
     return( 
-        <div> 
-{/* 
-<h1> Сумма заказа: {money}</h1>  */}
-        <div className='burger'> 
+            <div> 
+<h1> Сумма заказа: {props.money}</h1>  
+         <div className='burger'> 
         <h1>Price: ${props.money}</h1>   
         <h2>{props.errorMessage}</h2>
         <div className='top'>   
@@ -47,16 +48,18 @@ export default function Hamburger (props){
         </div>
         </div> 
         <div className='btn'> 
-          <button onClick={addSalat}>Добавить Салат</button> 
-          <button onClick={addMeatAC}>Добавить Мясо</button> 
-          <button onClick={addTomato}>Добавить кетчуп</button>
+          <button onClick={addSalatHandler}>Добавить Салат</button> 
+          <button onClick={addMeatHandler}>Добавить Мясо</button> 
+          <button onClick={addTomatoHandler}>Добавить кетчуп</button>
         </div>  
         <div className='btn'> 
-          <button onClick={delSalat}>Удалить Салат</button> 
+          <button onClick={delSalatHandler}>Удалить Салат</button> 
           <button onClick={delMEat}>Удалить Мясо</button> 
-          <button onClick={dellTomato}>Удалить кетчуп</button>
+          <button onClick={dellTomatoHandler}>Удалить кетчуп</button>
         </div> 
-        <button onClick={redirect}> <NavLink to={'/success'}>Далее</NavLink></button>
-        </div>
+        <button > <NavLink to={'/success'}>Далее</NavLink></button>
+        </div> 
+
     )
-}
+} 
+ 
