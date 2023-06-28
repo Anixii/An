@@ -11,8 +11,8 @@ function App() {
     lol
     <Routes> 
     <Route path='/' element={<Hamburger/>} /> 
-    {/* <Route path='/success/*' element={<PriceContainer/>}/>
-    <Route path='/order/' element={<OrederContainer/>}/> */}
+    <Route path='/success/*' element={<PriceContainer/>}/>
+    <Route path='/order/' element={<OrederContainer/>}/>
     </Routes> 
     </div>
   );

@@ -16,8 +16,6 @@ const Price = (props) => {
         <li> Tomato: {props.tomato.length} </li>
         <li> Salat: {props.salat.length} </li>
         <li>Price: {props.money}</li>
-           
-            
             </ul> 
             <form> 
                 <input onChange={(e)=> {updateAddress(e.currentTarget.value)}} type="text" placeholder="Your Address"/> 
