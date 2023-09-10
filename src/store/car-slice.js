@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"; 
 const initialState = { 
     carColor: '#101002', 
-    chrome: '#101002', 
+    chrome: '#e8e8e8', 
     wheel: '#101002', 
-    plastic: '#101002'
+    plastic: '#101002', 
+    currentSelect: 'Цвет корпуса',
 } 
 const carSlice = createSlice({ 
     name:'car',
@@ -20,9 +21,12 @@ const carSlice = createSlice({
         }, 
         setPlasticColor(state,action){ 
             state.plastic = action.payload.color
-        }, 
+        },  
+        setCurrentSelect(state,action){ 
+            state.currentSelect = action.payload.select
+        }
         
     }
 }) 
-export const {setCarColor, setChromColor, setPlasticColor, setWheelColor} = carSlice.actions 
+export const {setCarColor, setChromColor, setPlasticColor, setWheelColor, setCurrentSelect} = carSlice.actions 
 export default carSlice.reducer

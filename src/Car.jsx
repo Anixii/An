@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 export function Model(props) {
   const { nodes, materials } = useGLTF(car)
-  const { carColor, chrome, wheel, plastic } = useSelector(state => state.car)
+  const { carColor, chrome, wheel, } = useSelector(state => state.car)
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -49,18 +49,18 @@ export function Model(props) {
         <mesh geometry={nodes.Object_5.geometry} material={materials['Material.001']} /> 
         {/* задние фары */}
         
-        <mesh material-color={plastic} geometry={nodes.Object_35.geometry} material={materials.Car_plastic_dark} />
-        <mesh material-color={plastic} geometry={nodes.Object_36.geometry} material={materials.Car_plastic_dark} />
-        <mesh material-color={plastic} geometry={nodes.Object_37.geometry} material={materials.Car_plastic_dark} />
-        <mesh material-color={plastic} geometry={nodes.Object_38.geometry} material={materials.Car_plastic_dark} />
-        <mesh material-color={plastic} geometry={nodes.Object_39.geometry} material={materials.Car_plastic_dark} />
-        <mesh material-color={plastic} geometry={nodes.Object_40.geometry} material={materials.Car_plastic_dark} />
-        <mesh material-color={plastic} geometry={nodes.Object_41.geometry} material={materials.Car_plastic_dark} />
-        <mesh material-color={plastic} geometry={nodes.Object_42.geometry} material={materials.Car_plastic_dark} />
-        <mesh material-color={plastic} geometry={nodes.Object_43.geometry} material={materials.Car_plastic_dark} />
-        <mesh material-color={plastic} geometry={nodes.Object_44.geometry} material={materials.Car_plastic_dark} />
-        <mesh material-color={plastic} geometry={nodes.Object_45.geometry} material={materials.Car_plastic_dark} />
-        <mesh material-color={plastic} geometry={nodes.Object_46.geometry} material={materials.Car_plastic_dark} /> 
+        <mesh  geometry={nodes.Object_35.geometry} material={materials.Car_plastic_dark} />
+        <mesh  geometry={nodes.Object_36.geometry} material={materials.Car_plastic_dark} />
+        <mesh  geometry={nodes.Object_37.geometry} material={materials.Car_plastic_dark} />
+        <mesh  geometry={nodes.Object_38.geometry} material={materials.Car_plastic_dark} />
+        <mesh  geometry={nodes.Object_39.geometry} material={materials.Car_plastic_dark} />
+        <mesh  geometry={nodes.Object_40.geometry} material={materials.Car_plastic_dark} />
+        <mesh  geometry={nodes.Object_41.geometry} material={materials.Car_plastic_dark} />
+        <mesh  geometry={nodes.Object_42.geometry} material={materials.Car_plastic_dark} />
+        <mesh  geometry={nodes.Object_43.geometry} material={materials.Car_plastic_dark} />
+        <mesh  geometry={nodes.Object_44.geometry} material={materials.Car_plastic_dark} />
+        <mesh  geometry={nodes.Object_45.geometry} material={materials.Car_plastic_dark} />
+        <mesh  geometry={nodes.Object_46.geometry} material={materials.Car_plastic_dark} /> 
 
         <mesh geometry={nodes.Object_47.geometry} material={materials.Glass} /> 
         <mesh geometry={nodes.Object_48.geometry} material={materials.Glass} />
@@ -81,8 +81,8 @@ export function Model(props) {
         <mesh  geometry={nodes.Object_56.geometry} material={materials.Material_2125663092} /> 
         <mesh   geometry={nodes.Object_57.geometry} material={materials.Material_2125663092} />
         {/* Тормоза */}
-        <mesh  geometry={nodes.Object_58.geometry} material={materials.Material_2125663093} /> 
-        <mesh  geometry={nodes.Object_59.geometry} material={materials.Material_2125663093} />
+        <mesh material-color={wheel} geometry={nodes.Object_58.geometry} material={materials.Material_2125663093} /> 
+        <mesh material-color={wheel} geometry={nodes.Object_59.geometry} material={materials.Material_2125663093} />
         {/* Суппорта */}
       </group>
     </group>

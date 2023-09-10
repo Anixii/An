@@ -1,6 +1,5 @@
 import React from 'react'
 import s from './ColorPicker.module.css'
-import { setCarColor } from '../store/car-slice'
 import { useDispatch } from 'react-redux'
 const color = [ 
     {color: '#16191c'}, 
@@ -13,7 +12,6 @@ const color = [
 const ColorPicker = ({onChange}) => {
     const dispatch = useDispatch()
     const onHandleChangeColor = (e) =>{  
-        console.log(e);
         dispatch(onChange({color: e}))
     }
     return (

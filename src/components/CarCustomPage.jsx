@@ -1,15 +1,28 @@
 
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { Outlet,  useLocation } from 'react-router-dom';
 import { Model } from '../Car';
 import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { ContactShadows, Environment, OrbitControls } from '@react-three/drei';
-import ColorPicker from './ColorPicker';
 import CarSelect from './CarSelect'; 
 import s from './Car.module.css'
-import { setCarColor, setChromColor, setPlasticColor, setWheelColor } from '../store/car-slice';
-function CarCustomPage() {  
-
+import { useDispatch } from 'react-redux';
+import { setCurrentSelect } from '../store/car-slice';
+function CarCustomPage() { 
+    const dispatch = useDispatch()  
+    const location = useLocation()  
+    useEffect(() =>{ 
+        console.log(location);
+        if(location.pathname){ 
+            if(location.pathname === '/body'){ 
+                dispatch(setCurrentSelect({select:'Цвет корпуса'}))
+            } else if(location.pathname === '/chrom'){ 
+                dispatch(setCurrentSelect({select:'Цвет хрома'}))
+            } else if (location.pathname === '/wheel'){ 
+                dispatch(setCurrentSelect({select:'Цвет суппортов'}))
+            } 
+        }
+    }, [location, dispatch])
   return (
     <div className="App">   
     <div className={s.car}> 

@@ -1,7 +1,6 @@
 import { setCarColor, setChromColor, setPlasticColor, setWheelColor } from './store/car-slice'
 import { Route, Routes } from 'react-router-dom';
 import './App.css';   
-import CarSelect from './components/CarSelect';
 import CarCustomPage from './components/CarCustomPage';
 import ColorPicker from './components/ColorPicker';
 function App() {  
