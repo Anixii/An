@@ -1,6 +1,12 @@
-
+.App{ 
+  height: 100vh;
+}
 .salat { 
   transition: all 0.5 ease;
+}
+.image{ 
+  filter: drop-shadow(20px 20px 20px #e00808);
+  height: 150px;
 }
 .burger{ 
   display: flex; 
