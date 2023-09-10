@@ -1,5 +1,15 @@
-.App{ 
-  height: 100vh;
+*{ 
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}  
+.select_car{  
+  margin: 0% 0 5% 0;
+  display: flex; 
+  justify-content: center;
+}
+.car_select{ 
+  width: 30%;
 }
 .salat { 
   transition: all 0.5 ease;
